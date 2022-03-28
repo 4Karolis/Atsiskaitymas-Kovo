@@ -8,32 +8,46 @@ namespace Atsiskaitymas_Kovo_men_
     {
         static void Main(string[] args)
         {
-            List<int> BilietaiPo10Eur = new List<int>();
-            List<int> BilietaiPo20Eur = new List<int>();
-            List<int> BilietaiPo30Eur = new List<int>();
 
-            //int bilietai10 = 0;
-            //int bilietai20 = 0;
-            //int bolietai30 = 0;
+            //int result = list.sum();
+
+            //int desimtukai = sukurtiBilietaiPo10Eur.Count();
+
+            List<int> parduotiBilietaiPo10Eur = new List<int>();
+            List<int> parduotiBilietaiPo20Eur = new List<int>();
+            List<int> parduotiBilietaiPo30Eur = new List<int>();
+
+            List<int> sukurtiBilietaiPo10Eur = new List<int>();
+            List<int> sukurtiBilietaiPo20Eur = new List<int>();
+            List<int> sukurtiBilietaiPo30Eur = new List<int>();
+
+            int sukurtapo10 = sukurtiBilietaiPo10Eur.Sum();
+            int sukurtapo20 = sukurtiBilietaiPo20Eur.Sum();
+            int sukurtapo30 = sukurtiBilietaiPo30Eur.Sum();
+
+            int parduotaPo10 = parduotiBilietaiPo10Eur.Sum();
+            int parduotaPo20 = parduotiBilietaiPo20Eur.Sum();
+            int parduotaPo30 = parduotiBilietaiPo30Eur.Sum();
+
+            int likutisPo10 = sukurtapo10 - parduotaPo10;
+            int likutisPo20 = sukurtapo20 - parduotaPo20;
+            int likutisPo30 = sukurtapo30 - parduotaPo30;
+
+            int desimtukai = 0;
+            for (int i = 0; i < sukurtiBilietaiPo10Eur.Count; i++)
+            {
+                desimtukai++;
+            }
 
             while (true)
-            {
+            {               
                 Console.WriteLine("----------------------------------< MENIU >----------------------------------");
-                Console.WriteLine("[1] PIRKTI bilietus, [2] KURTI bilietus, [3] ATASKAITA");
+                Console.WriteLine("[1] PARDUOTI bilietus, [2] KURTI bilietus, [3] ATASKAITA");
                 int pirktiKurti = int.Parse(Console.ReadLine());
 
-                int bilietuPo10Kiekis = BilietaiPo10Eur.Sum();
-                int bilietuPo20Kiekis = BilietaiPo20Eur.Sum();
-                int bilietuPo30Kiekis = BilietaiPo30Eur.Sum();
-
-                //int visoSukurta10 = 0;
-                //int visoSukurta20 = 0;
-                //int visoSukurta30 = 0;
-
-                //int visoParduota10 = 0;
-                //int visoParduota20 = 0;
-                //int visoPardduota30 = 0;
-
+                //int bilietuPo10Kiekis = BilietaiPo10Eur.Sum();
+                //int bilietuPo20Kiekis = BilietaiPo20Eur.Sum();
+                //int bilietuPo30Kiekis = BilietaiPo30Eur.Sum();
 
                 switch (pirktiKurti)
                 {
@@ -47,7 +61,7 @@ namespace Atsiskaitymas_Kovo_men_
                             int kiekisPirkti1 = int.Parse(Console.ReadLine());
                             for (int i = 0; i < kiekisPirkti1; i++)
                             {
-                                BilietaiPo10Eur.Add(-1);
+                                parduotiBilietaiPo10Eur.Add(-1);
                             }
                         }
                         else if (pasirinkimasPirkti == 2)
@@ -56,7 +70,7 @@ namespace Atsiskaitymas_Kovo_men_
                             int kiekisPirkti2 = int.Parse(Console.ReadLine());
                             for (int i = 0; i < kiekisPirkti2; i++)
                             {
-                                BilietaiPo20Eur.Add(-1);
+                                parduotiBilietaiPo20Eur.Add(-1);
                             }
                         }
                         else if (pasirinkimasPirkti == 3)
@@ -65,7 +79,7 @@ namespace Atsiskaitymas_Kovo_men_
                             int kiekisPirkti3 = int.Parse(Console.ReadLine());
                             for (int i = 0; i < kiekisPirkti3; i++)
                             {
-                                BilietaiPo30Eur.Add(-1);
+                                parduotiBilietaiPo30Eur.Add(-1);
                             }
                         }
                         else
@@ -83,7 +97,7 @@ namespace Atsiskaitymas_Kovo_men_
                             int kiekisKurti1 = int.Parse(Console.ReadLine());
                             for (int i = 0; i < kiekisKurti1; i++)
                             {
-                                BilietaiPo10Eur.Add(1);
+                                sukurtiBilietaiPo10Eur.Add(1);
                             }
                         }
                         else if (pasirinkimasKurti == 2)
@@ -92,7 +106,7 @@ namespace Atsiskaitymas_Kovo_men_
                             int kiekisKurti2 = int.Parse(Console.ReadLine());
                             for (int i = 0; i < kiekisKurti2; i++)
                             {
-                                BilietaiPo20Eur.Add(1);
+                                sukurtiBilietaiPo20Eur.Add(1);
                             }
                         }
                         else if (pasirinkimasKurti == 3)
@@ -101,7 +115,7 @@ namespace Atsiskaitymas_Kovo_men_
                             int kiekisKurti3 = int.Parse(Console.ReadLine());
                             for (int i = 0; i < kiekisKurti3; i++)
                             {
-                                BilietaiPo30Eur.Add(1);
+                                sukurtiBilietaiPo30Eur.Add(1);
                             }
                         }
                         else
@@ -110,12 +124,17 @@ namespace Atsiskaitymas_Kovo_men_
                         }
                         break;
                     case 3:
-                        Console.WriteLine($"Esamu bilietu kiekis: Po 10 Eur [{bilietuPo10Kiekis}], Po 20 Eur [{bilietuPo20Kiekis}], Po 30 Eur [{bilietuPo30Kiekis}]");
-                        break;                    
-                }
+                        Console.WriteLine($"Bilietai po 10 EUr: sukurta [{sukurtapo10}], parduota [{parduotaPo10}], likutis [{likutisPo10}]");
+                        Console.WriteLine($"Bilietai po 20 EUr: sukurta [{sukurtapo20}], parduota [{parduotaPo20}], likutis [{likutisPo20}]");
+                        Console.WriteLine($"Bilietai po 30 EUr: sukurta [{sukurtapo30}], parduota [{parduotaPo30}], likutis [{likutisPo30}]");
+                        Console.WriteLine(desimtukai);
+                        break;
+                }                
             }
 
-            int visoSukurta10 = bilietuKiekii.Count("1");
+            
+
+            //int visoSukurta10 = bilietuKiekis.Count("1");
            
 
             //panaudosiu veliau, paziuret ar nesu minuse su bilietais
