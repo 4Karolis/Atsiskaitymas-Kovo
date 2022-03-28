@@ -12,11 +12,16 @@ namespace Atsiskaitymas_Kovo_men_
             List<int> BilietaiPo20Eur = new List<int>();
             List<int> BilietaiPo30Eur = new List<int>();
 
+            int bilietai10 = 0;
+            int bilietai20 = 0;
+            int bolietai30 = 0;
+
             while (true)
-            {
-                Console.WriteLine("----------------------------------< MENIU >----------------------------------");
-                Console.WriteLine("[1] PIRKTI bilietus, [2] KURTI bilietus.");
-                int pirktiKurti = int.Parse(Console.ReadLine());
+            //{
+            //    Console.WriteLine("----------------------------------< MENIU >----------------------------------");
+            //    Console.WriteLine("[1] PIRKTI bilietus, [2] KURTI bilietus.");
+            //    int pirktiKurti = int.Parse(Console.ReadLine());
+            
 
                 switch (pirktiKurti)
                 {
@@ -103,6 +108,12 @@ namespace Atsiskaitymas_Kovo_men_
             //Console.WriteLine($"po 10 yra: {BilietaiPo10Eur.Count}, 20: {BilietaiPo20Eur.Count}, po 30: {BilietaiPo30Eur.Count}");
 
         }//---------------------------------------------------------------------------------------------------------------------------
-        
+        public static void MainMenu()
+        {
+            Console.WriteLine("----------------------------------< MENIU >----------------------------------");
+            Console.WriteLine("[1] PIRKTI bilietus, [2] KURTI bilietus.");
+            int pirktiKurti = int.Parse(Console.ReadLine());
+            //return pirktiKurti;
+        }
     }
 }
