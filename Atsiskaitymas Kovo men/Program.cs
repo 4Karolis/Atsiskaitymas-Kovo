@@ -17,6 +17,7 @@ namespace Atsiskaitymas_Kovo_men_
                 Console.WriteLine("----------------------------------< MENIU >----------------------------------");
                 Console.WriteLine("[1] PIRKTI bilietus, [2] KURTI bilietus.");
                 int pirktiKurti = int.Parse(Console.ReadLine());
+                //MainMenu();
 
                 switch (pirktiKurti)
                 {
@@ -92,6 +93,13 @@ namespace Atsiskaitymas_Kovo_men_
                             Console.WriteLine("Neteisinga ivestis.Bandyk.");
                         }
                         break;
+<<<<<<< Updated upstream
+=======
+                    case 3: 
+                        Console.WriteLine($"Is viso sukurta bilietu: Po 10 Eur [], Po 20 Eur [], Po 30 Eur");
+                        Console.WriteLine($"Is viso parduota bilietu: Po 10 Eur [], Po 20 Eur [], po 30 Eur []");
+                        break;
+>>>>>>> Stashed changes
 
                 }
             }
@@ -102,6 +110,12 @@ namespace Atsiskaitymas_Kovo_men_
             Console.WriteLine(rezultatasPo10);
             //Console.WriteLine($"po 10 yra: {BilietaiPo10Eur.Count}, 20: {BilietaiPo20Eur.Count}, po 30: {BilietaiPo30Eur.Count}");
 
+        }//-------------------------------------------------------------------------------------------------------------------------
+        public static void MainMenu()
+        {
+            Console.WriteLine("----------------------------------< MENIU >----------------------------------");
+            Console.WriteLine("[1] PIRKTI bilietus, [2] KURTI bilietus, [3] ATASKAITA");
+            int pirktiKurti = int.Parse(Console.ReadLine());
         }
     }
 }
