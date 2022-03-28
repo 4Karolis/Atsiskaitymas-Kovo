@@ -102,6 +102,7 @@ namespace Atsiskaitymas_Kovo_men_
             Console.WriteLine(rezultatasPo10);
             //Console.WriteLine($"po 10 yra: {BilietaiPo10Eur.Count}, 20: {BilietaiPo20Eur.Count}, po 30: {BilietaiPo30Eur.Count}");
 
-        }
+        }//---------------------------------------------------------------------------------------------------------------------------
+        
     }
 }
