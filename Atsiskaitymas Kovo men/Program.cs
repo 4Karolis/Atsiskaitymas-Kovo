@@ -9,7 +9,7 @@ namespace Atsiskaitymas_Kovo_men_
         static void Main(string[] args)
         {
             MainMenu();
-            //PasirinktiBilietuTipa();
+            PasirinktiBilietuTipa2();
 
         }//---------------------------------------------------------------------------------------------------------------------------
          //public static void MainMenu()
@@ -19,7 +19,7 @@ namespace Atsiskaitymas_Kovo_men_
          //    int pirktiKurti = int.Parse(Console.ReadLine());
          //    //return pirktiKurti;
          //}
-        public static int PasirinktiBilietuTipa2(int parduotiKurti)
+        public static void PasirinktiBilietuTipa2(int parduotiKurti)
         {
             parduotiKurti = MainMenu();
 
@@ -30,17 +30,19 @@ namespace Atsiskaitymas_Kovo_men_
             {
                 Console.WriteLine("Iveskite kieki: ");
                 int pirkti = int.Parse(Console.ReadLine());
-                return pirkti;
+                //return pirkti;
             }
             else if(pasirinkimasPirkti == 2)
             {
                 Console.WriteLine("Iveskite kieki: ");
                 int pirkti = int.Parse(Console.ReadLine());
+                //return pirkti;
             }
             else if(pasirinkimasPirkti == 3)
             {
                 Console.WriteLine("Iveskite kieki: ");
                 int pirkti = int.Parse(Console.ReadLine());
+                //return pirkti;
             }
         }
         //public static void PasirinktiBilietuTipa(int parduotiKurti)
