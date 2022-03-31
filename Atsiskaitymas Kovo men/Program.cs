@@ -33,11 +33,11 @@ namespace Atsiskaitymas_Kovo_men_
             int likutisPo20 = sukurtapo20 - parduotaPo20;
             int likutisPo30 = sukurtapo30 - parduotaPo30;
 
-            int desimtukai = 0;
-            for (int i = 0; i < sukurtiBilietaiPo10Eur.Count; i++)
-            {
-                desimtukai++;
-            }
+            //int desimtukai = 0;
+            //for (int i = 0; i < sukurtiBilietaiPo10Eur.Count; i++)
+            //{
+            //    desimtukai++;
+            //}
 
             while (true)
             {               
@@ -127,7 +127,7 @@ namespace Atsiskaitymas_Kovo_men_
                         Console.WriteLine($"Bilietai po 10 EUr: sukurta [{sukurtapo10}], parduota [{parduotaPo10}], likutis [{likutisPo10}]");
                         Console.WriteLine($"Bilietai po 20 EUr: sukurta [{sukurtapo20}], parduota [{parduotaPo20}], likutis [{likutisPo20}]");
                         Console.WriteLine($"Bilietai po 30 EUr: sukurta [{sukurtapo30}], parduota [{parduotaPo30}], likutis [{likutisPo30}]");
-                        Console.WriteLine(desimtukai);
+                        //Console.WriteLine(desimtukai);
                         break;
                 }                
             }
