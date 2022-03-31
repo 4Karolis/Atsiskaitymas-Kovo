@@ -21,7 +21,7 @@ namespace Atsiskaitymas_Kovo_men_
             List<int> sukurtiBilietaiPo20Eur = new List<int>();
             List<int> sukurtiBilietaiPo30Eur = new List<int>();
 
-            int sukurtapo10 = sukurtiBilietaiPo10Eur.Sum();
+            int sukurtapo10 = sukurtiBilietaiPo10Eur.Count();
             int sukurtapo20 = sukurtiBilietaiPo20Eur.Sum();
             int sukurtapo30 = sukurtiBilietaiPo30Eur.Sum();
 
