@@ -39,6 +39,9 @@ namespace Atsiskaitymas_Kovo_men_
             //    desimtukai++;
             //}
             List<int> nupirktiPo10 = new List<int>();
+            List<int> TestuojuListus = new List<int>();
+            List<int> TestuojuListus2 = new List<int>();
+            int testuoju = TestuojuListus2.Count;
 
             while (true)
             {
@@ -65,82 +68,89 @@ namespace Atsiskaitymas_Kovo_men_
                         {
                             //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
                             //int kiekisPirkti1 = int.Parse(Console.ReadLine());
-                            int kiekis = IveskiteEuruKieki(bilietoTipasPirkti);
-                            for (int i = 0; i < kiekis; i++)
-                            {
-                                parduotiBilietaiPo10Eur.Add(-1);
-                            }
+                            IveskiteEuruKieki(bilietoTipasPirkti);
+                            //for (int i = 0; i < kiekis; i++)
+                            //{
+                            //    parduotiBilietaiPo10Eur.Add(-1);
+                            //    AddToList(TestuojuListus, 1);
+                            int kiekis = int.Parse(Console.ReadLine());
+                            Add2(TestuojuListus2, kiekis);
+                            //}
                         }
-                        else if (bilietoTipasPirkti == 2)
-                        {
-                            //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
-                            //int kiekisPirkti2 = int.Parse(Console.ReadLine());
-                            int kiekis = IveskiteEuruKieki(bilietoTipasPirkti);
-                            for (int i = 0; i < kiekis; i++)
-                            {
-                                parduotiBilietaiPo20Eur.Add(-1);
-                            }
-                        }
-                        else if (bilietoTipasPirkti == 3)
-                        {
-                            //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
-                            //int kiekisPirkti3 = int.Parse(Console.ReadLine());
-                            int kiekis = IveskiteEuruKieki(bilietoTipasPirkti);
-                            for (int i = 0; i < kiekis; i++)
-                            {
-                                parduotiBilietaiPo30Eur.Add(-1);
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
-                        }
+                        //else if (bilietoTipasPirkti == 2)
+                        //{
+                        //    //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
+                        //    //int kiekisPirkti2 = int.Parse(Console.ReadLine());
+                        //    int kiekis = IveskiteEuruKieki(bilietoTipasPirkti);
+                        //    for (int i = 0; i < kiekis; i++)
+                        //    {
+                        //        parduotiBilietaiPo20Eur.Add(-1);
+                        //    }
+                        //}
+                        //else if (bilietoTipasPirkti == 3)
+                        //{
+                        //    //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
+                        //    //int kiekisPirkti3 = int.Parse(Console.ReadLine());
+                        //    int kiekis = IveskiteEuruKieki(bilietoTipasPirkti);
+                        //    for (int i = 0; i < kiekis; i++)
+                        //    {
+                        //        parduotiBilietaiPo30Eur.Add(-1);
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
+                        //}
                         break;
-                    case 2:
-                        //Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
-                        //Console.WriteLine("[1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
-                        //int pasirinkimasKurti = int.Parse(Console.ReadLine());
-                        int bilietoTipasKurti = Pirkti(pirktiKurti);
-                        if (bilietoTipasKurti == 1)
-                        {
-                            //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
-                            //int kiekisKurti1 = int.Parse(Console.ReadLine());
-                            int kiekis = IveskiteEuruKieki(bilietoTipasKurti);
+                    //case 2:
+                    //    //Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
+                    //    //Console.WriteLine("[1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
+                    //    //int pasirinkimasKurti = int.Parse(Console.ReadLine());
+                    //    int bilietoTipasKurti = Pirkti(pirktiKurti);
+                    //    if (bilietoTipasKurti == 1)
+                    //    {
+                    //        //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
+                    //        //int kiekisKurti1 = int.Parse(Console.ReadLine());
+                    //        int kiekis = IveskiteEuruKieki(bilietoTipasKurti);
 
-                            for (int i = 0; i < kiekis; i++)
-                            {
-                                sukurtiBilietaiPo10Eur.Add(1);
-                            }
-                        }
-                        else if (bilietoTipasKurti == 2)
-                        {
-                            //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
-                            //int kiekisKurti2 = int.Parse(Console.ReadLine());
-                            int kiekis = IveskiteEuruKieki(bilietoTipasKurti);
-                            for (int i = 0; i < kiekis; i++)
-                            {
-                                sukurtiBilietaiPo20Eur.Add(1);
-                            }
-                        }
-                        else if (bilietoTipasKurti == 3)
-                        {
-                            //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
-                            //int kiekisKurti3 = int.Parse(Console.ReadLine());
-                            int kiekis = IveskiteEuruKieki(bilietoTipasKurti);
-                            for (int i = 0; i < kiekis; i++)
-                            {
-                                sukurtiBilietaiPo30Eur.Add(1);
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Neteisinga ivestis.Bandyk.");
-                        }
-                        break;
+                    //        for (int i = 0; i < kiekis; i++)
+                    //        {
+                    //            sukurtiBilietaiPo10Eur.Add(1);
+                    //        }
+                    //    }
+                    //    else if (bilietoTipasKurti == 2)
+                    //    {
+                    //        //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
+                    //        //int kiekisKurti2 = int.Parse(Console.ReadLine());
+                    //        int kiekis = IveskiteEuruKieki(bilietoTipasKurti);
+                    //        for (int i = 0; i < kiekis; i++)
+                    //        {
+                    //            sukurtiBilietaiPo20Eur.Add(1);
+                    //        }
+                    //    }
+                    //    else if (bilietoTipasKurti == 3)
+                    //    {
+                    //        //Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
+                    //        //int kiekisKurti3 = int.Parse(Console.ReadLine());
+                    //        int kiekis = IveskiteEuruKieki(bilietoTipasKurti);
+                    //        for (int i = 0; i < kiekis; i++)
+                    //        {
+                    //            sukurtiBilietaiPo30Eur.Add(1);
+                    //        }
+                    //    }
+                    //    else
+                    //    {
+                    //        Console.WriteLine("Neteisinga ivestis.Bandyk.");
+                    //    }
+                    //    break;
                     case 3:
                         Console.WriteLine($"Bilietai po 10 EUr: sukurta [], parduota [], likutis []");
                         Console.WriteLine($"Bilietai po 20 EUr: sukurta [], parduota [], likutis []");
                         Console.WriteLine($"Bilietai po 30 EUr: sukurta [], parduota [], likutis []");
+                        Console.WriteLine($"Katik pridejau krc: {TestuojuListus}");
+                        //Console.WriteLine(TestuojuListus);
+                        //Console.WriteLine(TestuojuListus2);
+                        Console.WriteLine(TestuojuListus2.Count);
                         //Console.WriteLine(desimtukai);
                         break;
                 }                
@@ -169,11 +179,39 @@ namespace Atsiskaitymas_Kovo_men_
         //    int pasirinkimasKurti = int.Parse(Console.ReadLine());
         //    return pasirinkimasKurti;
         //}
-        public static int IveskiteEuruKieki(int pasirinkimasPirkti)
+        public static void Add2(List<int> intList, int kiekis)
+        {
+            //list to store elements to be added
+           
+            //int skaicius = int.Parse(Console.ReadLine());
+            for ( int c = 0; c < kiekis; c++)
+            {
+                intList.Add(1);
+            }
+            //return c;
+            //ints.AddRange(inserts);
+        }
+        public static void Prideti(List<int> intList, int pasirinkimasPirkti, int j)
         {
             Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
-            int kiekis = int.Parse(Console.ReadLine());
-            return kiekis;
+            //int kiekis = int.Parse(Console.ReadLine());
+            //return kiekis;
+            for (int i = 0; i < j; i++)
+            {
+                
+            }
+           // Add2(List<> intList,)
+        }
+        public static void AddToList(List<int> intList, int skaicius)// del , 1 gal
+        {
+            int a = 1;
+            intList.Add(a);
+        }
+        public static void IveskiteEuruKieki(int pasirinkimasPirkti)
+        {
+            Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
+            //int kiekis = int.Parse(Console.ReadLine());
+            //return kiekis;
         }
         public static int Kurti(int pirktiKurti)
         {
