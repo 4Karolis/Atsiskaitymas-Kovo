@@ -57,11 +57,14 @@ namespace Atsiskaitymas_Kovo_men_
                         //Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
                         //Console.WriteLine("[1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
                         //int pasirinkimasPirkti = int.Parse(Console.ReadLine());
+
+                        //Duoda PIRKTI, ima inputa is main menu:
                         int pasirinkimasPirkti = Pirkti(pirktiKurti);
                         if (pasirinkimasPirkti == 1)
                         {
                             Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
                             int kiekisPirkti1 = int.Parse(Console.ReadLine());
+                            int kiekisPirkti = IveskiteEuruKieki(pasirinkimasPirkti);
                             for (int i = 0; i < kiekisPirkti1; i++)
                             {
                                 parduotiBilietaiPo10Eur.Add(-1);
@@ -147,6 +150,12 @@ namespace Atsiskaitymas_Kovo_men_
             //Console.WriteLine($"po 10 yra: {BilietaiPo10Eur.Count}, 20: {BilietaiPo20Eur.Count}, po 30: {BilietaiPo30Eur.Count}");
 
         }//---------------------------------------------------------------------------------------------------------------------------
+        public static int IveskiteEuruKieki(int pasirinkimasPirkti)
+        {
+            Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
+            int kiekisPirkti = int.Parse(Console.ReadLine());
+            return kiekisPirkti;
+        }
         public static int Pirkti(int pirktiKurti)
         {
             Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
