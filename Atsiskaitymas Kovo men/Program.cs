@@ -20,6 +20,8 @@ namespace Atsiskaitymas_Kovo_men_
 
             #region PROGRAMA
             bool Dasviduli = false;
+            //int pradzia = MainMenu();
+
             while (!Dasviduli)
             {
                 int pirktiKurti = MainMenu();
@@ -45,7 +47,7 @@ namespace Atsiskaitymas_Kovo_men_
                             IveskiteBilietuKieki(bilietoTipasPirkti);
                             int kiekis = int.Parse(Console.ReadLine());
                             Add2(NupirktiPo30, kiekis);
-                        }
+                        }                        
                         else
                         {
                             Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
@@ -93,6 +95,10 @@ namespace Atsiskaitymas_Kovo_men_
         #endregion
         //---------------------------------------------------------------------------------------------------------------------------
         #region METODAI
+        public static void WrongInput()
+        {
+
+        }
         public static void Atsisveikinimas()
         {
             Console.WriteLine("ate");
