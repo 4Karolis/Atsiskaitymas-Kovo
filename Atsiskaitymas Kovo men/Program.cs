@@ -7,53 +7,14 @@ namespace Atsiskaitymas_Kovo_men_
     class Program
     {
         static void Main(string[] args)
-        {
-
-            //int result = list.sum();
-
-            //int desimtukai = sukurtiBilietaiPo10Eur.Count();
-
-            //List<int> parduotiBilietaiPo10Eur = new List<int>();
-            //List<int> parduotiBilietaiPo20Eur = new List<int>();
-            //List<int> parduotiBilietaiPo30Eur = new List<int>();
-
-            //List<int> sukurtiBilietaiPo10Eur = new List<int>();
-            //List<int> sukurtiBilietaiPo20Eur = new List<int>();
-            //List<int> sukurtiBilietaiPo30Eur = new List<int>();
-
-            //int sukurtapo10 = sukurtiBilietaiPo10Eur.Count();
-            //int sukurtapo20 = sukurtiBilietaiPo20Eur.Sum();
-            //int sukurtapo30 = sukurtiBilietaiPo30Eur.Sum();
-
-            //int parduotaPo10 = parduotiBilietaiPo10Eur.Sum();
-            //int parduotaPo20 = parduotiBilietaiPo20Eur.Sum();
-            //int parduotaPo30 = parduotiBilietaiPo30Eur.Sum();
-
-            //int likutisPo10 = sukurtapo10 - parduotaPo10;
-            //int likutisPo20 = sukurtapo20 - parduotaPo20;
-            //int likutisPo30 = sukurtapo30 - parduotaPo30;
-
-
-
+        {            
             List<int> SukurtiPo10 = new List<int>();
             List<int> SukurtiPo20 = new List<int>();
             List<int> SukurtiPo30 = new List<int>();
 
             List<int> NupirktiPo10 = new List<int>();
             List<int> NupirktiPo20 = new List<int>();
-            List<int> NupirktiPo30 = new List<int>();
-
-            int sukurtaPo10 = SukurtiPo10.Count();
-            int sukurtaPo20 = SukurtiPo20.Count();
-            int sukurtaPo30 = SukurtiPo30.Count();
-
-            int nupirktaPo10 = NupirktiPo10.Count();
-            int nupirktaPo20 = NupirktiPo20.Count();
-            int nupirktaPo30 = NupirktiPo30.Count();
-
-            int likutisPo10 = sukurtaPo10 - nupirktaPo10;
-            int likutisPo20 = sukurtaPo20 - nupirktaPo30;
-            int likutisPo30 = sukurtaPo30 - nupirktaPo30;
+            List<int> NupirktiPo30 = new List<int>();            
 
             while (true)
             {                
@@ -86,10 +47,7 @@ namespace Atsiskaitymas_Kovo_men_
                             Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
                         }
                         break;
-                    case 2:
-                        //Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
-                        //Console.WriteLine("[1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
-                        //int pasirinkimasKurti = int.Parse(Console.ReadLine());
+                    case 2:                        
                         int bilietoTipasKurti = Kurti(pirktiKurti);
                         if (bilietoTipasKurti == 1)
                         {
@@ -115,12 +73,9 @@ namespace Atsiskaitymas_Kovo_men_
                         }
                         break;
                     case 3:
-                        Console.WriteLine($"Bilietai po 10 EUr: sukurta [{sukurtaPo10}], parduota [{nupirktaPo10}], likutis [{likutisPo10}]");
-                        Console.WriteLine($"Bilietai po 20 EUr: sukurta [{sukurtaPo20}], parduota [{nupirktaPo20}], likutis [{likutisPo20}]");
-                        Console.WriteLine($"Bilietai po 30 EUr: sukurta [{sukurtaPo30}], parduota [{nupirktaPo30}], likutis [{likutisPo30}]");
-                        Console.WriteLine(sukurtaPo10);
-                        //Console.WriteLine($"Katik pridejau krc: {TestuojuListus}");                        
-                        //Console.WriteLine(TestuojuListus2.Count);                        
+                        Ataskaita10(SukurtiPo10, NupirktiPo10);
+                        Ataskaita20(SukurtiPo20, NupirktiPo20);
+                        Ataskaita30(SukurtiPo30, NupirktiPo30);
                         break;
                 }                
             }
@@ -137,6 +92,20 @@ namespace Atsiskaitymas_Kovo_men_
         //    int pasirinkimasKurti = int.Parse(Console.ReadLine());
         //    return pasirinkimasKurti;
         //}
+        public static void Ataskaita10(List<int> SukurtiPo10, List<int> NupirktiPo10)
+        {
+            Console.WriteLine($"Bilietai po 10 EUr: sukurta [{SukurtiPo10.Count}], parduota [{NupirktiPo10.Count}], likutis [{SukurtiPo10.Count - NupirktiPo10.Count}]");
+
+        }
+        public static void Ataskaita20(List<int> SukurtiPo20, List<int> NupirktiPo20)
+        {
+            Console.WriteLine($"Bilietai po 20 EUr: sukurta [{SukurtiPo20.Count}], parduota [{NupirktiPo20.Count}], likutis [{SukurtiPo20.Count - NupirktiPo20.Count}]");
+
+        } public static void Ataskaita30(List<int> SukurtiPo30, List<int> NupirktiPo30)
+        {
+            Console.WriteLine($"Bilietai po 10 EUr: sukurta [{SukurtiPo30.Count}], parduota [{NupirktiPo30.Count}], likutis [{SukurtiPo30.Count - NupirktiPo30.Count}]");
+
+        }
         public static int GaunuKieki(int pasirinkimasPirkti)
         {
             int kiekis = int.Parse(Console.ReadLine());
