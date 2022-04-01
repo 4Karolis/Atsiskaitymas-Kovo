@@ -40,21 +40,24 @@ namespace Atsiskaitymas_Kovo_men_
             //}
 
             while (true)
-            {               
-                Console.WriteLine("----------------------------------< MENIU >----------------------------------");
-                Console.WriteLine("[1] PARDUOTI bilietus, [2] KURTI bilietus, [3] ATASKAITA");
-                int pirktiKurti = int.Parse(Console.ReadLine());
-
+            {
                 //int bilietuPo10Kiekis = BilietaiPo10Eur.Sum();
                 //int bilietuPo20Kiekis = BilietaiPo20Eur.Sum();
                 //int bilietuPo30Kiekis = BilietaiPo30Eur.Sum();
 
+                //Console.WriteLine("----------------------------------< MENIU >----------------------------------");
+                //Console.WriteLine("[1] PARDUOTI bilietus, [2] KURTI bilietus, [3] ATASKAITA");
+                //int pirktiKurti = int.Parse(Console.ReadLine());
+
+                //Rodo main meniu, gauna PIRKTI KURTI
+                int pirktiKurti = MainMenu();
                 switch (pirktiKurti)
                 {
                     case 1:
-                        Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
-                        Console.WriteLine("[1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
-                        int pasirinkimasPirkti = int.Parse(Console.ReadLine());
+                        //Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
+                        //Console.WriteLine("[1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
+                        //int pasirinkimasPirkti = int.Parse(Console.ReadLine());
+                        int pasirinkimasPirkti = Pirkti(pirktiKurti);
                         if (pasirinkimasPirkti == 1)
                         {
                             Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
@@ -144,12 +147,19 @@ namespace Atsiskaitymas_Kovo_men_
             //Console.WriteLine($"po 10 yra: {BilietaiPo10Eur.Count}, 20: {BilietaiPo20Eur.Count}, po 30: {BilietaiPo30Eur.Count}");
 
         }//---------------------------------------------------------------------------------------------------------------------------
-         //public static void MainMenu()
-         //{
-         //    Console.WriteLine("----------------------------------< MENIU >----------------------------------");
-         //    Console.WriteLine("[1] PIRKTI bilietus, [2] KURTI bilietus.");
-         //    int pirktiKurti = int.Parse(Console.ReadLine());
-         //    //return pirktiKurti;
-        //}
+        public static int Pirkti(int pirktiKurti)
+        {
+            Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
+            Console.WriteLine("[1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
+            int pasirinkimasPirkti = int.Parse(Console.ReadLine());
+            return pasirinkimasPirkti;
+        }
+         public static int MainMenu()
+        {
+            Console.WriteLine("----------------------------------< MENIU >----------------------------------");
+            Console.WriteLine("[1] PARDUOTI bilietus, [2] KURTI bilietus, [3] ATASKAITA");
+            int pirktiKurti = int.Parse(Console.ReadLine());
+            return pirktiKurti;
+        }
     }
 }
