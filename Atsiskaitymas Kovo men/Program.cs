@@ -63,18 +63,12 @@ namespace Atsiskaitymas_Kovo_men_
             }
         }
             public static void Dasviduli2()
-        {
+            {
             Console.Clear();
             Console.WriteLine("Aciu, kad naudojates musu paslaugomis. iki kito karto!");
             Environment.Exit(0);
-        }
-        //public static void Dasviduli()
-        //{
-        //    bool dasviduli = false;
-        //    Console.Clear();
-        //    Console.WriteLine("Aciu, kad naudojates musu paslaugomis. Iki kito karto!");
-        //    //Atsisveikinimas();
-        //}
+            }
+       
         public static void Keisas(int pirktiKurti, List<int> NupirktiPo10, List<int> NupirktiPo20, List<int> NupirktiPo30)
         {
             Console.Clear();
