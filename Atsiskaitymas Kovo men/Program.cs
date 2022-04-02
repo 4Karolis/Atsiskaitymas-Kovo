@@ -28,6 +28,7 @@ namespace Atsiskaitymas_Kovo_men_
                 switch (pirktiKurti)
                 {
                     case 1:
+                        // Keisas1(int pirktiKurti, List<int> NupirktiPo10, List<int> NupirktiPo20, List<int> NupirktiPo30);
                         int bilietoTipasPirkti = Pirkti(pirktiKurti);
                         if (bilietoTipasPirkti == 1)
                         {
@@ -47,7 +48,7 @@ namespace Atsiskaitymas_Kovo_men_
                             IveskiteBilietuKieki(bilietoTipasPirkti);
                             int kiekis = int.Parse(Console.ReadLine());
                             Add2(NupirktiPo30, kiekis);
-                        }                        
+                        }
                         else
                         {
                             Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
@@ -95,6 +96,34 @@ namespace Atsiskaitymas_Kovo_men_
         #endregion
         //---------------------------------------------------------------------------------------------------------------------------
         #region METODAI
+        public static void Keisas1(int pirktiKurti, List<int> NupirktiPo10, List<int> NupirktiPo20, List<int> NupirktiPo30)
+        {
+            
+            int bilietoTipasPirkti = Pirkti(pirktiKurti);
+            if (bilietoTipasPirkti == 1)
+            {
+                IveskiteBilietuKieki(bilietoTipasPirkti);
+                int kiekis = int.Parse(Console.ReadLine());
+                //GaunuKieki(bilietoTipasPirkti);//pabandyt gaut atskira metoda cw!
+                Add2(NupirktiPo10, kiekis);
+            }
+            else if (bilietoTipasPirkti == 2)
+            {
+                IveskiteBilietuKieki(bilietoTipasPirkti);
+                int kiekis = int.Parse(Console.ReadLine());
+                Add2(NupirktiPo20, kiekis);
+            }
+            else if (bilietoTipasPirkti == 3)
+            {
+                IveskiteBilietuKieki(bilietoTipasPirkti);
+                int kiekis = int.Parse(Console.ReadLine());
+                Add2(NupirktiPo30, kiekis);
+            }
+            else
+            {
+                Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
+            }
+        }
         public static void WrongInput()
         {
 
