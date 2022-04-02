@@ -163,6 +163,20 @@ namespace Atsiskaitymas_Kovo_men_
             Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
             Console.WriteLine("              [1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
             int bilietoTipasKurti = int.Parse(Console.ReadLine());
+            while (true)
+            {
+                int.TryParse(Console.ReadLine(), out int inputas);
+                bool gerasInputas = inputas == 1 || inputas == 2 || inputas == 3;
+                if (gerasInputas)
+                {
+                    bilietoTipasKurti = inputas;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("\nNeteisingai ivestas pasirinkimas! Rinkites is meniu.");
+                }
+            }
             return bilietoTipasKurti;
         }
         public static int Pirkti(int pirktiKurti)
