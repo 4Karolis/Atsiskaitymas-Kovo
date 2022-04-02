@@ -74,25 +74,29 @@ namespace Atsiskaitymas_Kovo_men_
             string exit = Console.ReadLine();
             return exit;
         }
-        //public static void Testi()
-        //{
-        //    string exit = Console.ReadLine();
-        //    switch (Console.ReadLine())
-        //    {
-        //        case "T":
-        //            //return;
-        //            //return exit;
-        //            break;
-        //        case "t":
-        //            //return;
-        //            //return exit;
-        //            break;
-        //        default:
-        //            Dasviduli2();
-        //            break;
-        //    }
+        public static void Testi()
+        {
+            string exit = Console.ReadLine();
+            if(!exit.Contains('T') || !exit.Contains('t'))
+            {
+                Console.WriteLine("wrongus inputas");
+            }
+            //switch (Console.ReadLine())
+            //{
+            //    case "T":
+            //        //return;
+            //        //return exit;
+            //        break;
+            //    case "t":
+            //        //return;
+            //        //return exit;
+            //        break;
+            //    default:
+            //        Dasviduli2();
+            //        break;
+            //}
             //return break; ;
-        //}
+        }
         public static void Keisas2(bool gerasinputas, int pirktiKurti, List<int> SukurtiPo10, List<int> NupirktiPo10, List<int> SukurtiPo20, List<int> NupirktiPo20, List<int> SukurtiPo30, List<int> NupirktiPo30)
         {
             Console.Clear();
@@ -108,19 +112,19 @@ namespace Atsiskaitymas_Kovo_men_
                     {                        
                      string exit = PatikraArUztenkaBilietu(SukurtiPo10, NupirktiPo10);
                         //Testi();
-                    switch (exit)
-                    {
-                        case "T":
-                            return;
-                            break;
-                        case "t":
-                            return;
-                            break;
-                        default:
-                            Dasviduli2();
-                            break;
+                        switch (exit)
+                        {
+                            case "T":
+                                return;
+                                break;
+                            case "t":
+                                return;
+                                break;
+                            default:
+                                Dasviduli2();
+                                break;
+                        }
                     }
-                }
                     else
                     {
                         Add2(NupirktiPo10, kiekis);
