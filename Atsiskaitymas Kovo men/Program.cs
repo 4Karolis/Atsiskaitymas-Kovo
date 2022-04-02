@@ -27,10 +27,10 @@ namespace Atsiskaitymas_Kovo_men_
                 switch (pirktiKurti)
                 {
                     case 1:
-                        Keisas(pirktiKurti, NupirktiPo10, NupirktiPo20, NupirktiPo30);
+                        Keisas(pirktiKurti, SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);
                         break;
                     case 2:
-                        Keisas(pirktiKurti, SukurtiPo10, SukurtiPo20, SukurtiPo30);
+                        Keisas2(pirktiKurti, SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);
                         break;
                     case 3:
                         Ataskaita(SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);                        
@@ -69,15 +69,27 @@ namespace Atsiskaitymas_Kovo_men_
             Environment.Exit(0);
             }
        
-        public static void Keisas(int pirktiKurti, List<int> NupirktiPo10, List<int> NupirktiPo20, List<int> NupirktiPo30)
+        public static void Keisas2(int pirktiKurti, List<int> SukurtiPo10, List<int> NupirktiPo10, List<int> SukurtiPo20, List<int> NupirktiPo20, List<int> SukurtiPo30, List<int> NupirktiPo30)
         {
             Console.Clear();
             int bilietoTipasPirkti = Pirkti(pirktiKurti);
             if (bilietoTipasPirkti == 1)
-            {
-                IveskiteBilietuKieki(bilietoTipasPirkti);
-                int kiekis = int.Parse(Console.ReadLine());
-                Add2(NupirktiPo10, kiekis);
+            {               
+                while (true)
+                {
+                    IveskiteBilietuKieki(bilietoTipasPirkti);
+                    int kiekis = int.Parse(Console.ReadLine());
+                    if (kiekis > SukurtiPo10.Count - NupirktiPo10.Count)
+                    {
+                        Console.WriteLine($"Nepakankamas bilietu kiekis!");
+                    }
+                    else
+                    {
+                        Add2(NupirktiPo10, kiekis);
+                        break;
+                    }
+                }
+                
             }
             else if (bilietoTipasPirkti == 2)
             {
