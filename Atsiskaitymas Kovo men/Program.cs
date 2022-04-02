@@ -27,11 +27,9 @@ namespace Atsiskaitymas_Kovo_men_
                 switch (pirktiKurti)
                 {
                     case 1:
-                       // Keisas(pirktiKurti, SukurtiPo10, SukurtiPo20, SukurtiPo30);
                         Keisas2(iseiti, pirktiKurti, SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);
                         break;
                     case 2:
-                        //Keisas2(pirktiKurti, SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);
                         Keisas(pirktiKurti, SukurtiPo10, SukurtiPo20, SukurtiPo30);
                         break;
                     case 3:
@@ -60,7 +58,6 @@ namespace Atsiskaitymas_Kovo_men_
                     break;
                 default:
                     Console.Clear();
-                    //Dasviduli2();
                     break;
             }
         }
@@ -70,8 +67,36 @@ namespace Atsiskaitymas_Kovo_men_
             Console.WriteLine("Aciu, kad naudojates musu paslaugomis. iki kito karto!");
             Environment.Exit(0);
             }
-       
-        public static void Keisas2(bool iseiti, int pirktiKurti, List<int> SukurtiPo10, List<int> NupirktiPo10, List<int> SukurtiPo20, List<int> NupirktiPo20, List<int> SukurtiPo30, List<int> NupirktiPo30)
+        public static string PatikraArUztenkaBilietu(List<int> SukurtiPo10, List<int> NupirktiPo10)
+        {
+            Console.WriteLine($"Nepakankamas bilietu kiekis! [Likutis: {SukurtiPo10.Count - NupirktiPo10.Count}]");
+            Console.WriteLine($"Norite testi apsipirkima? Taip - [T], Ne - [N]");
+            string exit = Console.ReadLine();
+            return exit;
+        }       
+        public static void Testi()
+        {
+            //string exit = Console.ReadLine();
+            switch (Console.ReadLine())
+            {
+                case "T":
+                    return;
+                    //return exit;
+                    break;
+                case "t":
+                    return;
+                    //return exit;
+                    break;
+                case "N":
+                    Dasviduli2();
+                    break;
+                case "n":
+                    Dasviduli2();
+                    break;
+            }
+            //return break; ;
+        }
+        public static void Keisas2(bool gerasinputas, int pirktiKurti, List<int> SukurtiPo10, List<int> NupirktiPo10, List<int> SukurtiPo20, List<int> NupirktiPo20, List<int> SukurtiPo30, List<int> NupirktiPo30)
         {
             Console.Clear();
             int bilietoTipasPirkti = Pirkti(pirktiKurti);
@@ -82,10 +107,25 @@ namespace Atsiskaitymas_Kovo_men_
                 while (gerasInputas)
                 {
                     int kiekis = int.Parse(Console.ReadLine());
-
                     if (kiekis > SukurtiPo10.Count - NupirktiPo10.Count)
-                    {
-                        Console.WriteLine($"Nepakankamas bilietu kiekis! [Likutis: {SukurtiPo10.Count - NupirktiPo10.Count}] Grizti i meniu - [T]");
+                    {                        
+                        string exit = PatikraArUztenkaBilietu(SukurtiPo10, NupirktiPo10);
+                        Testi();
+                        //switch (exit)
+                        //{
+                        //    case "T":
+                        //        return;
+                        //        break;
+                        //    case "t":
+                        //        return;
+                        //        break;
+                        //    case "N":
+                        //        Dasviduli2();
+                        //        break;
+                        //    case "n":
+                        //        Dasviduli2();
+                        //        break;
+                        //}                        
                     }
                     else
                     {
