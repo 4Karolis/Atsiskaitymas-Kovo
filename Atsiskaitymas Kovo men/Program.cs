@@ -20,17 +20,19 @@ namespace Atsiskaitymas_Kovo_men_
 
             #region PROGRAMA
             bool dasviduli = false;
-
+            bool iseiti = true;
             while (!dasviduli)
             {
                 int pirktiKurti = MainMenu();
                 switch (pirktiKurti)
                 {
                     case 1:
-                        Keisas(pirktiKurti, SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);
+                       // Keisas(pirktiKurti, SukurtiPo10, SukurtiPo20, SukurtiPo30);
+                        Keisas2(iseiti, pirktiKurti, SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);
                         break;
                     case 2:
-                        Keisas2(pirktiKurti, SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);
+                        //Keisas2(pirktiKurti, SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);
+                        Keisas(pirktiKurti, SukurtiPo10, SukurtiPo20, SukurtiPo30);
                         break;
                     case 3:
                         Ataskaita(SukurtiPo10, NupirktiPo10, SukurtiPo20, NupirktiPo20, SukurtiPo30, NupirktiPo30);                        
@@ -69,27 +71,28 @@ namespace Atsiskaitymas_Kovo_men_
             Environment.Exit(0);
             }
        
-        public static void Keisas2(int pirktiKurti, List<int> SukurtiPo10, List<int> NupirktiPo10, List<int> SukurtiPo20, List<int> NupirktiPo20, List<int> SukurtiPo30, List<int> NupirktiPo30)
+        public static void Keisas2(bool iseiti, int pirktiKurti, List<int> SukurtiPo10, List<int> NupirktiPo10, List<int> SukurtiPo20, List<int> NupirktiPo20, List<int> SukurtiPo30, List<int> NupirktiPo30)
         {
             Console.Clear();
             int bilietoTipasPirkti = Pirkti(pirktiKurti);
             if (bilietoTipasPirkti == 1)
-            {               
-                while (true)
+            {
+                bool gerasInputas = true;
+                IveskiteBilietuKieki(bilietoTipasPirkti);
+                while (gerasInputas)
                 {
-                    IveskiteBilietuKieki(bilietoTipasPirkti);
                     int kiekis = int.Parse(Console.ReadLine());
+
                     if (kiekis > SukurtiPo10.Count - NupirktiPo10.Count)
                     {
-                        Console.WriteLine($"Nepakankamas bilietu kiekis!");
+                        Console.WriteLine($"Nepakankamas bilietu kiekis! [Likutis: {SukurtiPo10.Count - NupirktiPo10.Count}] Grizti i meniu - [T]");
                     }
                     else
                     {
                         Add2(NupirktiPo10, kiekis);
                         break;
                     }
-                }
-                
+                }              
             }
             else if (bilietoTipasPirkti == 2)
             {
@@ -107,7 +110,35 @@ namespace Atsiskaitymas_Kovo_men_
             {
                 Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
             }
-        }                
+        }
+        public static void Keisas(int pirktiKurti, List<int> SukurtiPo10, List<int> SukurtiPo20, List<int> SukurtiPo30)
+        {
+            Console.Clear();
+            int bilietoTipasPirkti = Pirkti(pirktiKurti);
+            if (bilietoTipasPirkti == 1)
+            {
+                IveskiteBilietuKieki(bilietoTipasPirkti);
+                int kiekis = int.Parse(Console.ReadLine());
+                //GaunuKieki(bilietoTipasPirkti);//pabandyt gaut atskira metoda cw!
+                Add2(SukurtiPo10, kiekis);
+            }
+            else if (bilietoTipasPirkti == 2)
+            {
+                IveskiteBilietuKieki(bilietoTipasPirkti);
+                int kiekis = int.Parse(Console.ReadLine());
+                Add2(SukurtiPo20, kiekis);
+            }
+            else if (bilietoTipasPirkti == 3)
+            {
+                IveskiteBilietuKieki(bilietoTipasPirkti);
+                int kiekis = int.Parse(Console.ReadLine());
+                Add2(SukurtiPo30, kiekis);
+            }
+            else
+            {
+                Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
+            }
+        }
         public static void Ataskaita(List<int> SukurtiPo10, List<int> NupirktiPo10, List<int> SukurtiPo20, List<int> NupirktiPo20, List<int> SukurtiPo30, List<int> NupirktiPo30)
         {
             Console.Clear();
