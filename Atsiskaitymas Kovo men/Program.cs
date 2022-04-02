@@ -77,7 +77,6 @@ namespace Atsiskaitymas_Kovo_men_
             {
                 IveskiteBilietuKieki(bilietoTipasPirkti);
                 int kiekis = int.Parse(Console.ReadLine());
-                //GaunuKieki(bilietoTipasPirkti);//pabandyt gaut atskira metoda cw!
                 Add2(NupirktiPo10, kiekis);
             }
             else if (bilietoTipasPirkti == 2)
@@ -96,15 +95,7 @@ namespace Atsiskaitymas_Kovo_men_
             {
                 Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
             }
-        }
-        public static void WrongInput()
-        {
-
-        }
-        public static void Atsisveikinimas()
-        {
-            Console.WriteLine("ate");
-        }
+        }                
         public static void Ataskaita(List<int> SukurtiPo10, List<int> NupirktiPo10, List<int> SukurtiPo20, List<int> NupirktiPo20, List<int> SukurtiPo30, List<int> NupirktiPo30)
         {
             Console.Clear();
@@ -151,15 +142,16 @@ namespace Atsiskaitymas_Kovo_men_
         //}
         public static void IveskiteBilietuKieki(int pasirinkimasPirkti)
         {
+            //int pasirinkimasPirkti;
             Console.Clear();
             Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
+            //if(pasirinkimasPirkti)
             //int kiekis = int.Parse(Console.ReadLine());
             //return kiekis;
         }
         public static int Kurti(int pirktiKurti)
         {
             Console.Clear();
-
             Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
             Console.WriteLine("              [1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
             int bilietoTipasKurti = int.Parse(Console.ReadLine());
