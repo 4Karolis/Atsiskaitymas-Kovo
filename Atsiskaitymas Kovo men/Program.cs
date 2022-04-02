@@ -134,15 +134,67 @@ namespace Atsiskaitymas_Kovo_men_
             }
             else if (bilietoTipasPirkti == 2)
             {
+                bool gerasInputas = true;
+
                 IveskiteBilietuKieki(bilietoTipasPirkti);
-                int kiekis = KiekisOk();
-                Add2(NupirktiPo20, kiekis);
+                while (gerasInputas)
+                {
+                    int kiekis = KiekisOk();
+                    if (kiekis > SukurtiPo20.Count - NupirktiPo20.Count)
+                    {
+                        string exit = PatikraArUztenkaBilietu(SukurtiPo20, NupirktiPo20);
+                        //Testi();
+                        switch (exit)
+                        {
+                            case "T":
+                                return;
+                                break;
+                            case "t":
+                                return;
+                                break;
+                            default:
+                                Dasviduli2();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Add2(NupirktiPo20, kiekis);
+                        break;
+                    }
+                }               
             }
             else if (bilietoTipasPirkti == 3)
             {
+                bool gerasInputas = true;
+
                 IveskiteBilietuKieki(bilietoTipasPirkti);
-                int kiekis = KiekisOk();
-                Add2(NupirktiPo30, kiekis);
+                while (gerasInputas)
+                {
+                    int kiekis = KiekisOk();
+                    if (kiekis > SukurtiPo20.Count - NupirktiPo20.Count)
+                    {
+                        string exit = PatikraArUztenkaBilietu(SukurtiPo30, NupirktiPo30);
+                        //Testi();
+                        switch (exit)
+                        {
+                            case "T":
+                                return;
+                                break;
+                            case "t":
+                                return;
+                                break;
+                            default:
+                                Dasviduli2();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Add2(NupirktiPo30, kiekis);
+                        break;
+                    }
+                }
             }
             else
             {
