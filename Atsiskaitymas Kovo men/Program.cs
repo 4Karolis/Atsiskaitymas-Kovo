@@ -19,65 +19,19 @@ namespace Atsiskaitymas_Kovo_men_
             #endregion
 
             #region PROGRAMA
-            bool Dasviduli = false;
+            bool dasviduli = false;
             //int pradzia = MainMenu();
 
-            while (!Dasviduli)
+            while (!dasviduli)
             {
                 int pirktiKurti = MainMenu();
                 switch (pirktiKurti)
                 {
                     case 1:
-                        // Keisas1(int pirktiKurti, List<int> NupirktiPo10, List<int> NupirktiPo20, List<int> NupirktiPo30);
-                        int bilietoTipasPirkti = Pirkti(pirktiKurti);
-                        if (bilietoTipasPirkti == 1)
-                        {
-                            IveskiteBilietuKieki(bilietoTipasPirkti);
-                            int kiekis = int.Parse(Console.ReadLine());
-                            //GaunuKieki(bilietoTipasPirkti);//pabandyt gaut atskira metoda cw!
-                            Add2(NupirktiPo10, kiekis);
-                        }
-                        else if (bilietoTipasPirkti == 2)
-                        {
-                            IveskiteBilietuKieki(bilietoTipasPirkti);
-                            int kiekis = int.Parse(Console.ReadLine());
-                            Add2(NupirktiPo20, kiekis);
-                        }
-                        else if (bilietoTipasPirkti == 3)
-                        {
-                            IveskiteBilietuKieki(bilietoTipasPirkti);
-                            int kiekis = int.Parse(Console.ReadLine());
-                            Add2(NupirktiPo30, kiekis);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
-                        }
+                        Keisas(pirktiKurti, NupirktiPo10, NupirktiPo20, NupirktiPo30);
                         break;
                     case 2:
-                        int bilietoTipasKurti = Kurti(pirktiKurti);
-                        if (bilietoTipasKurti == 1)
-                        {
-                            IveskiteBilietuKieki(bilietoTipasKurti);
-                            int kiekis = int.Parse(Console.ReadLine());
-                            Add2(SukurtiPo10, kiekis);
-                        }
-                        else if (bilietoTipasKurti == 2)
-                        {
-                            IveskiteBilietuKieki(bilietoTipasKurti);
-                            int kiekis = int.Parse(Console.ReadLine());
-                            Add2(SukurtiPo20, kiekis);
-                        }
-                        else if (bilietoTipasKurti == 3)
-                        {
-                            IveskiteBilietuKieki(bilietoTipasKurti);
-                            int kiekis = int.Parse(Console.ReadLine());
-                            Add2(SukurtiPo30, kiekis);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Neteisinga ivestis.Bandyk.");
-                        }
+                        Keisas(pirktiKurti, SukurtiPo10, SukurtiPo20, SukurtiPo30);
                         break;
                     case 3:
                         Ataskaita10(SukurtiPo10, NupirktiPo10);
@@ -85,10 +39,7 @@ namespace Atsiskaitymas_Kovo_men_
                         Ataskaita30(SukurtiPo30, NupirktiPo30);
                         break;
                     case 4:
-                        Dasviduli = false;
-                        Console.Clear();
-                        Console.WriteLine("Aciu, kad naudojates musu paslaugomis. Iki kito karto!");
-                        Atsisveikinimas();
+                        Dasviduli2();
                         break;                        
                 }
             }
@@ -96,7 +47,20 @@ namespace Atsiskaitymas_Kovo_men_
         #endregion
         //---------------------------------------------------------------------------------------------------------------------------
         #region METODAI
-        public static void Keisas1(int pirktiKurti, List<int> NupirktiPo10, List<int> NupirktiPo20, List<int> NupirktiPo30)
+        public static void Dasviduli2()
+        {
+            Console.Clear();
+            Console.WriteLine("Aciu, kad naudojates musu paslaugomis. iki kito karto!");
+            Environment.Exit(0);
+        }
+        public static void Dasviduli()
+        {
+            bool dasviduli = false;
+            Console.Clear();
+            Console.WriteLine("Aciu, kad naudojates musu paslaugomis. Iki kito karto!");
+            Atsisveikinimas();
+        }
+        public static void Keisas(int pirktiKurti, List<int> NupirktiPo10, List<int> NupirktiPo20, List<int> NupirktiPo30)
         {
             
             int bilietoTipasPirkti = Pirkti(pirktiKurti);
@@ -186,9 +150,25 @@ namespace Atsiskaitymas_Kovo_men_
         }
         public static int MainMenu()
         {
-            Console.WriteLine("----------------------------------< MENIU >----------------------------------");
+            Console.Clear();
+            Console.WriteLine("------------------------------------< MENIU >------------------------------------");
             Console.WriteLine("[1] PARDUOTI bilietus, [2] KURTI bilietus, [3] ATASKAITA, [4] ISEITI is programos");
-            int pirktiKurti = int.Parse(Console.ReadLine());
+            //int.TryParse(Console.ReadLine(), out int pirktiKurti);
+            int pirktiKurti;
+            while (true)
+            {
+                int.TryParse(Console.ReadLine(), out int inputas);
+                bool gerasInputas = inputas == 1 || inputas == 2 || inputas == 3 || inputas == 4;
+                if (gerasInputas)
+                {
+                    pirktiKurti = inputas;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("\nNeteisingai ivestas pasirinkimas!");
+                }
+            }
             return pirktiKurti;
         }        
         #endregion
