@@ -46,7 +46,7 @@ namespace Atsiskaitymas_Kovo_men_
         #region METODAI
         public static void QToQuit()
         {
-            Console.WriteLine("\n[Q] - ISEITI | TESTI - spauskite bet kuri kita mygtuka");
+            Console.WriteLine("\n------------< [Q] - ISEITI | TESTI - spauskite bet kuri kita mygtuka >-----------");
             string quit = Console.ReadLine();
             switch (quit)
             {
@@ -115,14 +115,13 @@ namespace Atsiskaitymas_Kovo_men_
         {
             Console.Clear();
             Console.WriteLine("----------------------------------< ATASKAITA >----------------------------------");
-            Console.WriteLine($"\nBilietai po 10 Eur"); 
-            Console.WriteLine($"Sukurta [{SukurtiPo10.Count}], parduota [{NupirktiPo10.Count}], likutis [{SukurtiPo10.Count - NupirktiPo10.Count}]");
-            Console.WriteLine($"\nBilietai po 20 Eur: ");
-            Console.WriteLine($"Sukurta [{SukurtiPo20.Count}], parduota [{NupirktiPo20.Count}], likutis [{SukurtiPo20.Count - NupirktiPo20.Count}]");
-            Console.WriteLine($"\nBilietai po 30 Eur: ");
-            Console.WriteLine($"Sukurta [{SukurtiPo30.Count}], parduota [{NupirktiPo30.Count}], likutis [{SukurtiPo30.Count - NupirktiPo30.Count}]");
-            Console.WriteLine("\n------------< [Q] - ISEITI | TESTI - spauskite bet kuri kita mygtuka >-----------");
-            QToQuit();
+            Console.WriteLine($"                                Bilietai po 10 Eur:"); 
+            Console.WriteLine($"                      Sukurta [{SukurtiPo10.Count}], parduota [{NupirktiPo10.Count}], likutis [{SukurtiPo10.Count - NupirktiPo10.Count}]");
+            Console.WriteLine($"\n                                Bilietai po 20 Eur: ");
+            Console.WriteLine($"                      Sukurta [{SukurtiPo20.Count}], parduota [{NupirktiPo20.Count}], likutis [{SukurtiPo20.Count - NupirktiPo20.Count}]");
+            Console.WriteLine($"\n                                Bilietai po 30 Eur: ");
+            Console.WriteLine($"                      Sukurta [{SukurtiPo30.Count}], parduota [{NupirktiPo30.Count}], likutis [{SukurtiPo30.Count - NupirktiPo30.Count}]");
+           QToQuit();
         }
         //public static void Ataskaita10(List<int> SukurtiPo10, List<int> NupirktiPo10)
         //{
@@ -159,7 +158,7 @@ namespace Atsiskaitymas_Kovo_men_
         public static void IveskiteBilietuKieki(int pasirinkimasPirkti)
         {
             Console.Clear();
-            Console.WriteLine("\n-----------------------------< Iveskite kieki >------------------------------");
+            Console.WriteLine("-----------------------------< Iveskite kieki >------------------------------");
             //int kiekis = int.Parse(Console.ReadLine());
             //return kiekis;
         }
@@ -167,8 +166,8 @@ namespace Atsiskaitymas_Kovo_men_
         {
             Console.Clear();
 
-            Console.WriteLine("\n-----------------------< Pasirinkite bilieto tipa >--------------------------");
-            Console.WriteLine("\n              [1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
+            Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
+            Console.WriteLine("              [1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
             int bilietoTipasKurti = int.Parse(Console.ReadLine());
             return bilietoTipasKurti;
         }
@@ -176,8 +175,8 @@ namespace Atsiskaitymas_Kovo_men_
         {
             Console.Clear();
 
-            Console.WriteLine("\n-----------------------< Pasirinkite bilieto tipa >--------------------------");
-            Console.WriteLine("\n               [1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
+            Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
+            Console.WriteLine("               [1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
             int bilietoTipasPirkti;
             while (true)
             {
@@ -198,8 +197,8 @@ namespace Atsiskaitymas_Kovo_men_
         public static int MainMenu()
         {
             Console.Clear();
-            Console.WriteLine("\n------------------------------------< MENIU >------------------------------------");
-            Console.WriteLine("\n[1] PARDUOTI bilietus, [2] KURTI bilietus, [3] ATASKAITA, [4] ISEITI is programos");
+            Console.WriteLine("------------------------------------< MENIU >------------------------------------");
+            Console.WriteLine("[1] PARDUOTI bilietus, [2] KURTI bilietus, [3] ATASKAITA, [4] ISEITI is programos");
             //int.TryParse(Console.ReadLine(), out int pirktiKurti);
             int pirktiKurti;
             while (true)
