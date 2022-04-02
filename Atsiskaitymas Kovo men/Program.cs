@@ -151,6 +151,22 @@ namespace Atsiskaitymas_Kovo_men_
                 Console.WriteLine("Neteisinga ivestis. Bandykite dar karta");
             }
         }
+        public static int KiekisOk()
+        {
+            int kiekis;
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out kiekis))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("assdsadasdas");
+                }
+            }
+            return kiekis;
+        }
         public static void Keisas(int pirktiKurti, List<int> SukurtiPo10, List<int> SukurtiPo20, List<int> SukurtiPo30)
         {
             Console.Clear();
@@ -158,8 +174,8 @@ namespace Atsiskaitymas_Kovo_men_
             if (bilietoTipasPirkti == 1)
             {
                 IveskiteBilietuKieki(bilietoTipasPirkti);
-                int kiekis = int.Parse(Console.ReadLine());
-                //GaunuKieki(bilietoTipasPirkti);//pabandyt gaut atskira metoda cw!
+                //int kiekis = int.Parse(Console.ReadLine());
+                int kiekis = KiekisOk();
                 Add2(SukurtiPo10, kiekis);
             }
             else if (bilietoTipasPirkti == 2)
