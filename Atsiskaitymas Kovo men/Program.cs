@@ -172,7 +172,7 @@ namespace Atsiskaitymas_Kovo_men_
                 while (gerasInputas)
                 {
                     int kiekis = KiekisOk();
-                    if (kiekis > SukurtiPo20.Count - NupirktiPo20.Count)
+                    if (kiekis > SukurtiPo30.Count - NupirktiPo30.Count)
                     {
                         string exit = PatikraArUztenkaBilietu(SukurtiPo30, NupirktiPo30);
                         //Testi();
