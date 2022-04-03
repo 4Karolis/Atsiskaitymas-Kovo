@@ -212,7 +212,7 @@ namespace Atsiskaitymas_Kovo_men_
                 }
                 else
                 {
-                    Console.WriteLine("assdsadasdas");
+                    Console.WriteLine("Neteisinga ivestis. Bandykite dar karta:");
                 }
             }
             return kiekis;
@@ -256,39 +256,14 @@ namespace Atsiskaitymas_Kovo_men_
             Console.WriteLine($"\n                                Bilietai po 30 Eur: ");
             Console.WriteLine($"                      Sukurta [{SukurtiPo30.Count}], parduota [{NupirktiPo30.Count}], likutis [{SukurtiPo30.Count - NupirktiPo30.Count}]");
            QToQuit();
-        }
-        //public static void Ataskaita10(List<int> SukurtiPo10, List<int> NupirktiPo10)
-        //{
-        //    Console.WriteLine($"Bilietai po 10 EUr: sukurta [{SukurtiPo10.Count}], parduota [{NupirktiPo10.Count}], likutis [{SukurtiPo10.Count - NupirktiPo10.Count}]");
-
-        //}
-        //public static void Ataskaita20(List<int> SukurtiPo20, List<int> NupirktiPo20)
-        //{
-        //    Console.WriteLine($"Bilietai po 20 EUr: sukurta [{SukurtiPo20.Count}], parduota [{NupirktiPo20.Count}], likutis [{SukurtiPo20.Count - NupirktiPo20.Count}]");
-
-        //}
-        //public static void Ataskaita30(List<int> SukurtiPo30, List<int> NupirktiPo30)
-        //{
-        //    Console.WriteLine($"Bilietai po 10 EUr: sukurta [{SukurtiPo30.Count}], parduota [{NupirktiPo30.Count}], likutis [{SukurtiPo30.Count - NupirktiPo30.Count}]");
-
-        //}
-        //public static int GaunuKieki()
-        //{
-        //    int kiekis = int.Parse(Console.ReadLine());
-        //    return kiekis;
-        //}
+        }        
         public static void Add2(List<int> intList, int kiekis)
         {
             for (int c = 0; c < kiekis; c++)
             {
                 intList.Add(1);
             }
-        }
-        //public static void AddToList(List<int> intList, int skaicius)
-        //{
-        //    int a = 1;
-        //    intList.Add(a);
-        //}
+        }        
         public static void IveskiteBilietuKieki(int pasirinkimasPirkti)
         {
             //int pasirinkimasPirkti;
@@ -323,9 +298,9 @@ namespace Atsiskaitymas_Kovo_men_
         public static int Pirkti(int pirktiKurti)
         {
             Console.Clear();
-
             Console.WriteLine("-----------------------< Pasirinkite bilieto tipa >--------------------------");
             Console.WriteLine("               [1] Po 10 Eur, [2] Po 20 Eur, [3] Po 30 Eur");
+
             int bilietoTipasPirkti;
             while (true)
             {
