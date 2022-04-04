@@ -224,7 +224,6 @@ namespace Atsiskaitymas_Kovo_men_
             if (bilietoTipasPirkti == 1)
             {
                 IveskiteBilietuKieki(bilietoTipasPirkti);
-                //int kiekis = int.Parse(Console.ReadLine());
                 int kiekis = KiekisOk();
                 Add2(SukurtiPo10, kiekis);
             }
@@ -255,7 +254,7 @@ namespace Atsiskaitymas_Kovo_men_
             Console.WriteLine($"                      Sukurta [{SukurtiPo20.Count}], parduota [{NupirktiPo20.Count}], likutis [{SukurtiPo20.Count - NupirktiPo20.Count}]");
             Console.WriteLine($"\n                                Bilietai po 30 Eur: ");
             Console.WriteLine($"                      Sukurta [{SukurtiPo30.Count}], parduota [{NupirktiPo30.Count}], likutis [{SukurtiPo30.Count - NupirktiPo30.Count}]");
-           QToQuit();
+            QToQuit();
         }        
         public static void Add2(List<int> intList, int kiekis)
         {
